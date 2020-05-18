@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+ }
+
+body {
+  background-color: #2f5a80;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%2300cbfb' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  background-size: 5px 5px;
+  font-family: 'Space Mono', monospace;
+  color: whitesmoke;
+  height: 100vh;
+  font-size: 12px;
+  }
+
+/* se a tela tiver pelo menos 400 px vai carregar estes estilos*/
+@midia (min-width: 400px) {
+  body {
+    font-size: 14px;
+    }
+  }
+
+@midia (min-width: 600px) {
+  body {
+    font-size: 18px;
+    }
+  }
+  
+header {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+.menu {
+  background-color: white;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  z-index: 1;
+}
+
+.menu ul {
+  display: flex;
+  justify-content: space-around;
+  }
+
+.menu li {
+  list-style: none;
+  }
+
+.menu a {
+  display: block;
+  padding: 10px 20px;
+  transition: background-color 0.5s, color 0.5s;
+  }
+
+.menu a:active,
+.menu a:hover {
+ background-color: teal;
+ color: white;
+ } 
+
+a {
+  color: teal;
+  text-decoration: none;
+  }
+
+a:hover {
+  text-decoration: underline;
+  }
+
+.titulo {
+  transform: scale (0.2) translateY(30vh);
+  opacity: 0; 
+  animation: ease 2s animacaoTitulo forwards;
+  }
+
+@keyframes animacaoTitulo {
+  
+  from {
+    transform: scale (0.2) translateY(30vh);
+    opacity: 0;
+    }
+  
+  to {
+    transform: scale (1) translateY(0);
+    opacity: 1;
+    }
+  }
+
+.site-subtitle,
+  .site-title {
+    text-align: center;
+    color: whitesmoke;
+    }
+
+.site-title {
+  font-size: 3em;
+  font-family: 'Noto Serif', serif;
+  }
+
+.site-subtitle {
+  font-style: italic;
+  font-family: 'Roboto', sans-serif;
+}
+
+.sobre h2,
+.contato h2,
+.portfolio h2 {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  margin-bottom: 1em;
+  font-size: 2em;
+}
+
+.sobre,
+.contato,
+.portfolio {
+  padding: 2em;
+  min-height: 100vh;
+  margin-lef: auto;
+  margin-right: auto; 
+  }
+
+@media (min-width 1200px) {  
+.sobre,
+.contato,
+.portfolio {
+  max-width: 1200px;
+  margin-lef: auto;
+  margin-right: auto; 
+   }
+  }
+
+.contato a {
+  color: white;
+  font-size: 2em;
+  transition: text-shadow 1s;
+ }
+
+.contato .icons {
+  text-align: center;
+  font-size: 2em;
+  }
+
+.contato a:active,
+.contato a:hover {
+  text-decoration: none;
+ text-shadow: 0px 0px 10px white;
+}
+
+.sobre p {
+  margin-bottom: 1em;
+  text-indent: 1.4em;
+  text-align: justify;
+  }
+
+.sobre a {
+  color: cyan;
+  }
+
+.sobre .avatar {
+  float: right;
+  margin-left: 1.5em;
+  }
+
+.sobre .avatar img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+
+.portfolio .grid {
+  display: grid;
+  gap: 2em;
+  }
+
+@midia (min-width: 560px) {
+  .portfolio .grid {
+    grid-template-columns: 240px 240px;
+    }
+  }
+
+@midia (min-width: 880px) {
+  .portfolio .grid {
+    grid-template-columns: repeat(3, 260px);
+    align-content: center;
+    justify-content: center;
+    height: calc(100vh - 48px - 8em);
+    }
+  }
+
+.portfolio figure {
+  text-align: center;
+}  
+
+.img-portfolio {
+  height: 100px;
+  width: 140px;
+  object-fit: cover;
+  border-radius: 5%;
+  transition: transform 500ms;
+  }
+
+.img-portfolio:hover {
+  transform: scale(1.1);
+  }
+
+/*
+.flip-card {
+  perspective: 450px;
+  }
+
+.card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  }
+
+.flip-card:active .card,
+.flip-card:hover .card {
+  transform: rotateY(180deg);
+  }
+
+.card-front, .card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  }
+
+.card-back {
+  background-color: cyan;
+  height: 100px;
+  width: 140px;
+  border-radius: 5%;
+  transform: rotateY(180deg);
+  }
+*/
+
+@midia (min-width: 1200px) {
+  .img-portfolio {
+    height: 10em;
+    width: auto;
+    }
+  }
